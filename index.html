@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HIDAK Trio EPK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;1,500&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE occasion: a band's press kit, calm and confident, like a well-made record sleeve
+   IDEA the band's own wave-line mark as a river of sound: flowing lines carry you from cover to contact, and the plans section is a bridge you cross
+   PICTURE full-bleed cover photo with the mark's lines drifting across its foot; later, an arched bridge with five stations
+   COLOUR fog grey from the photo's sky, warm ink, terracotta from the rocks as the one accent; night: charcoal with lit terracotta
+   TYPE Barlow Condensed (display, the brand's family) + Barlow (text)
+   LAYOUT laptop: cover screen, then bands of two or three columns; phone: everything stacks, photo first */
+:root{color-scheme:light dark;--bg:light-dark(#e9ebe7,#141211);--bg2:light-dark(#dfe2dd,#1d1a18);--ink:light-dark(#1c1715,#ece7e1);--mute:light-dark(#5d5450,#a89f98);--acc:light-dark(#a8481f,#e27a4a);--line:light-dark(#c9ccc6,#3a3431);--deep:#2a0a04}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Barlow,system-ui,sans-serif;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:"Barlow Condensed",Barlow,sans-serif;font-weight:700;line-height:1.05;letter-spacing:-.01em;margin:0;text-wrap:balance}
+h2{font-size:clamp(36px,5vw,56px)}
+h3{font-size:30px;font-weight:600}
+p{margin:0 0 1em}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding-block:clamp(48px,7vw,104px);padding-inline:max(5vw,16px)}
+html[data-lang=en] .hu,html[data-lang=hu] .en{display:none!important}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;padding:10px max(5vw,16px);max-width:none}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.brand svg{height:22px;fill:var(--ink)}
+.links{display:flex;gap:18px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-left:auto;font-weight:500;font-size:15px}
+.links a{text-decoration:none;color:var(--mute);white-space:nowrap;padding:12px 0}
+.links a:hover{color:var(--ink)}
+.lang{display:flex;border:1.5px solid var(--ink);border-radius:999px;padding:2px;flex:none}
+.lang button{font:600 14px Barlow,sans-serif;border:0;background:none;color:var(--ink);padding:8px 14px;min-height:40px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+button:focus-visible,a:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+/* hero */
+.hero{position:relative;min-height:min(92svh,880px);display:grid;align-items:end;color:#fff;overflow:hidden;background:#3b3330}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(28,12,6,.85) 100%)}
+.hero .logo{position:absolute;top:clamp(20px,5vw,64px);left:max(5vw,16px);width:clamp(150px,22vw,280px);z-index:2;fill:#231a17}
+.hero .logo svg{width:100%;display:block}
+.hero .logo .w{margin-top:12%}
+.stream{position:absolute;left:0;right:0;bottom:0;height:46%;z-index:1;pointer-events:none;opacity:.5}
+.stream path{fill:none;stroke:#fff;stroke-width:1.6;stroke-linecap:round}
+.hero .txt{position:relative;z-index:3;padding:0 max(5vw,16px) clamp(32px,6vw,72px)}
+.hero h1{font-size:clamp(56px,11vw,150px);font-weight:500;font-style:italic;letter-spacing:-.02em}
+.who{display:flex;flex-wrap:wrap;gap:6px 28px;margin-top:18px;font-size:18px}
+.who b{font-weight:600}.who span{opacity:.8}
+/* about */
+.about .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:start}
+.lead{font-size:clamp(22px,2.4vw,30px);line-height:1.4;font-weight:500}
+.lead b{font-weight:700;color:var(--acc)}
+.dict{border-top:2px solid var(--ink);padding-top:18px}
+.dict .word{font:600 44px/1 "Barlow Condensed",sans-serif}
+.dict .ipa{color:var(--mute);margin:6px 0 16px}
+.dict .ipa i{font-style:normal;color:var(--acc);font-weight:600}
+/* band */
+.band2{background:var(--bg2)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:40px}
+.head p{max-width:46ch;color:var(--mute);margin:0}
+.members{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px)}
+.m figure{margin:0 0 18px;aspect-ratio:4/5;overflow:hidden;background:#222}
+.m img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.m:hover img{transform:scale(1.04)}
+.m .ins{color:var(--acc);font-weight:600;margin:6px 0 12px}
+.m p{font-size:16px;color:var(--mute)}
+/* recordings */
+.recs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,56px)}
+.vid{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:#111;text-decoration:none}
+.vid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease,opacity .3s}
+.vid:hover img{transform:scale(1.03)}
+.play{position:absolute;left:50%;top:50%;width:72px;height:72px;margin:-36px 0 0 -36px;border-radius:50%;background:rgba(20,8,4,.72);display:grid;place-items:center;transition:background .2s}
+.vid:hover .play{background:var(--acc)}
+.play::before{content:"";border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+.cover-art{position:absolute;right:-14px;bottom:-22px;width:30%;box-shadow:0 10px 24px rgba(0,0,0,.35);z-index:2}
+.rec .media{position:relative;margin-bottom:36px}
+.rec h3{margin-bottom:10px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 18px;border:1.5px solid var(--ink);border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;background:none;color:var(--ink);cursor:pointer}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btn.solid{background:var(--acc);border-color:var(--acc);color:#fff}
+.btn.solid:hover{filter:brightness(1.1)}
+.dn{display:inline-flex;border:1.5px solid var(--ink);border-radius:999px;padding:2px;margin-bottom:14px}
+.dn button{font:600 14px Barlow,sans-serif;border:0;background:none;color:var(--ink);min-height:40px;padding:8px 16px;border-radius:999px;cursor:pointer}
+.dn button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+/* live */
+.live{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,40px)}
+.live figcaption{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px;font-weight:600}
+.live figcaption span{color:var(--mute);font-weight:500}
+.live figure{margin:0}
+/* plans */
+.plans{background:var(--deep);color:#f1e9e3}
+.plans .head p{color:#cdb9ad}
+.route{position:relative;margin-top:24px}
+.route svg{position:absolute;left:0;right:0;top:0;width:100%;height:120px}
+.route svg path{fill:none;stroke:#e27a4a;stroke-width:3}
+.route svg .deck{stroke:#6b3a2a;stroke-width:1.5}
+.stops{list-style:none;margin:0;padding:120px 0 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
+.stops li{position:relative;border-top:1.5px solid #6b3a2a;padding-top:16px}
+.stops li::before{content:"";position:absolute;top:-8px;left:0;width:14px;height:14px;border-radius:50%;background:#2a0a04;border:3px solid #e27a4a}
+.stops li.next::before{background:#e27a4a}
+.stops .when{font:600 15px Barlow,sans-serif;color:#e27a4a;margin-bottom:6px}
+.stops .what{font:600 22px/1.15 "Barlow Condensed",sans-serif}
+.plans .txt{max-width:70ch;margin-top:48px;font-size:19px;color:#e6dad2}
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.rows{border-top:2px solid var(--ink)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 0;border-bottom:1px solid var(--line)}
+.row .k{color:var(--mute);font-size:15px}
+.row .v{font:600 clamp(22px,2.6vw,30px)/1.2 "Barlow Condensed",sans-serif;white-space:nowrap}
+.row .v a{text-decoration:none}
+.row .v a:hover{color:var(--acc)}
+.copy{font:600 14px Barlow,sans-serif;min-height:40px;padding:8px 14px;border:1.5px solid var(--line);border-radius:999px;background:none;color:var(--ink);cursor:pointer}
+.copy:hover{border-color:var(--ink)}
+.bigmark{fill:var(--ink)}
+.bigmark svg{width:100%;max-width:420px;display:block}
+.bigmark .w{margin-top:10%}
+footer{padding:24px max(5vw,16px);border-top:1px solid var(--line);color:var(--mute);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){.stops{grid-template-columns:minmax(0,1fr);padding-top:0;gap:0;margin-left:8px}.route svg{display:none}.stops li{border-top:0;border-left:1.5px solid #6b3a2a;padding:0 0 26px 26px}.stops li::before{top:2px;left:-8px}}
+@media(max-width:760px){.about .wrap,.recs,.contact .wrap{grid-template-columns:minmax(0,1fr)}.members{grid-template-columns:minmax(0,1fr)}.m{display:grid;grid-template-columns:minmax(0,140px) minmax(0,1fr);gap:18px;align-items:start}.m figure{margin:0}.links{display:none}.lang{margin-left:auto}.contact .bigmark{order:-1;max-width:220px}}
+@media(max-width:600px){.live{grid-template-columns:minmax(0,1fr)}.m{grid-template-columns:minmax(0,1fr)}.m figure{max-width:none}.hero{min-height:82svh}.cover-art{width:34%;right:-6px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.stream path{animation:none!important}*{transition:none!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#top" aria-label="HIDAK Trio"><svg viewBox="0 0 91 61"><path d="M80.69 7.24C68.23 8.65 54.73 7.90 40.84 6.92C39.06 6.80 37.31 6.67 35.59 6.55C26.20 5.86 18.10 5.27 9.67 5.39L9.61 1.01C18.22 0.90 26.82 1.52 35.91 2.18C37.62 2.31 39.37 2.43 41.15 2.56C55.31 3.55 69.05 4.32 81.48 2.74L82.03 7.08C81.58 7.13 81.14 7.19 80.69 7.24Z"/><path d="M83.23 27.88C70.78 29.30 57.22 28.56 43.29 27.58C41.51 27.46 39.77 27.33 38.06 27.21C24.99 26.25 13.70 25.43 1.22 26.63L0.80 22.28C13.65 21.04 25.11 21.88 38.38 22.84C40.09 22.97 41.82 23.09 43.60 23.22C59.66 24.35 75.21 25.15 88.85 22.64L89.64 26.94C87.54 27.32 85.41 27.64 83.23 27.88Z"/><path d="M81.98 17.56C69.54 18.97 55.99 18.23 42.07 17.25C40.28 17.13 38.53 17.00 36.81 16.88C24.89 16.01 14.59 15.26 3.48 16.02L3.18 11.65C14.60 10.87 25.04 11.63 37.13 12.51C38.85 12.64 40.59 12.76 42.37 12.89C58.01 13.99 73.15 14.79 86.52 12.50L87.25 16.81C85.52 17.11 83.76 17.36 81.98 17.56Z"/><path d="M84.43 38.22C71.98 39.63 58.44 38.89 44.52 37.91C42.74 37.79 40.99 37.66 39.28 37.54C25.92 36.56 14.38 35.72 1.55 37.05L1.10 32.70C14.31 31.33 26.03 32.19 39.60 33.17C41.31 33.30 43.05 33.43 44.83 33.55C60.31 34.64 75.31 35.43 88.58 33.23L89.30 37.54C87.70 37.81 86.07 38.03 84.43 38.22Z"/><path d="M85.60 48.56C73.13 49.97 59.63 49.22 45.75 48.24C43.96 48.12 42.22 47.99 40.51 47.87C27.49 46.92 16.25 46.10 3.84 47.28L3.43 42.92C16.20 41.71 27.61 42.54 40.83 43.50C42.53 43.63 44.27 43.76 46.05 43.88C59.91 44.85 73.36 45.62 85.61 44.15L86.12 48.50C85.95 48.52 85.77 48.54 85.60 48.56Z"/><path d="M78.93 59.51C69.56 59.94 59.76 59.47 46.97 58.57C45.19 58.45 43.44 58.32 41.72 58.20C30.17 57.36 20.20 56.63 9.51 57.27L9.25 52.90C20.23 52.25 30.34 52.98 42.04 53.83C43.75 53.96 45.50 54.09 47.28 54.21C59.91 55.10 69.57 55.56 78.72 55.14L78.93 59.51Z"/></svg></a>
+  <div class="links">
+    <a href="#about"><span class="en">About</span><span class="hu">A trióról</span></a>
+    <a href="#band"><span class="en">Band</span><span class="hu">Zenekar</span></a>
+    <a href="#recordings"><span class="en">Recordings</span><span class="hu">Felvételek</span></a>
+    <a href="#live"><span class="en">Live</span><span class="hu">Koncertek</span></a>
+    <a href="#plans"><span class="en">Plans</span><span class="hu">Tervek</span></a>
+    <a href="#contact"><span class="en">Contact</span><span class="hu">Kapcsolat</span></a>
+  </div>
+  <div class="lang" role="group" aria-label="Language">
+    <button id="l-en" type="button" data-set="en" aria-pressed="true">EN</button>
+    <button id="l-hu" type="button" data-set="hu" aria-pressed="false">HU</button>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <img src="img/cover.jpg" alt="Péter Cseh, Tibor Fonay and Tamás Hidász on a rocky hilltop">
+  <div class="logo" aria-label="HIDAK Trio"><svg viewBox="0 0 91 61" style="width:44%;margin-left:28%"><path d="M80.69 7.24C68.23 8.65 54.73 7.90 40.84 6.92C39.06 6.80 37.31 6.67 35.59 6.55C26.20 5.86 18.10 5.27 9.67 5.39L9.61 1.01C18.22 0.90 26.82 1.52 35.91 2.18C37.62 2.31 39.37 2.43 41.15 2.56C55.31 3.55 69.05 4.32 81.48 2.74L82.03 7.08C81.58 7.13 81.14 7.19 80.69 7.24Z"/><path d="M83.23 27.88C70.78 29.30 57.22 28.56 43.29 27.58C41.51 27.46 39.77 27.33 38.06 27.21C24.99 26.25 13.70 25.43 1.22 26.63L0.80 22.28C13.65 21.04 25.11 21.88 38.38 22.84C40.09 22.97 41.82 23.09 43.60 23.22C59.66 24.35 75.21 25.15 88.85 22.64L89.64 26.94C87.54 27.32 85.41 27.64 83.23 27.88Z"/><path d="M81.98 17.56C69.54 18.97 55.99 18.23 42.07 17.25C40.28 17.13 38.53 17.00 36.81 16.88C24.89 16.01 14.59 15.26 3.48 16.02L3.18 11.65C14.60 10.87 25.04 11.63 37.13 12.51C38.85 12.64 40.59 12.76 42.37 12.89C58.01 13.99 73.15 14.79 86.52 12.50L87.25 16.81C85.52 17.11 83.76 17.36 81.98 17.56Z"/><path d="M84.43 38.22C71.98 39.63 58.44 38.89 44.52 37.91C42.74 37.79 40.99 37.66 39.28 37.54C25.92 36.56 14.38 35.72 1.55 37.05L1.10 32.70C14.31 31.33 26.03 32.19 39.60 33.17C41.31 33.30 43.05 33.43 44.83 33.55C60.31 34.64 75.31 35.43 88.58 33.23L89.30 37.54C87.70 37.81 86.07 38.03 84.43 38.22Z"/><path d="M85.60 48.56C73.13 49.97 59.63 49.22 45.75 48.24C43.96 48.12 42.22 47.99 40.51 47.87C27.49 46.92 16.25 46.10 3.84 47.28L3.43 42.92C16.20 41.71 27.61 42.54 40.83 43.50C42.53 43.63 44.27 43.76 46.05 43.88C59.91 44.85 73.36 45.62 85.61 44.15L86.12 48.50C85.95 48.52 85.77 48.54 85.60 48.56Z"/><path d="M78.93 59.51C69.56 59.94 59.76 59.47 46.97 58.57C45.19 58.45 43.44 58.32 41.72 58.20C30.17 57.36 20.20 56.63 9.51 57.27L9.25 52.90C20.23 52.25 30.34 52.98 42.04 53.83C43.75 53.96 45.50 54.09 47.28 54.21C59.91 55.10 69.57 55.56 78.72 55.14L78.93 59.51Z"/></svg><svg class="w" viewBox="0 0 204 23"><path fill-rule="evenodd" d="M11.98 1.03C12.05 0.96 12.14 0.93 12.24 0.93L16.49 0.93C16.59 0.93 16.68 0.96 16.75 1.03C16.82 1.10 16.85 1.18 16.85 1.28L16.85 21.55C16.85 21.65 16.82 21.73 16.75 21.80C16.68 21.87 16.59 21.90 16.49 21.90L12.24 21.90C12.14 21.90 12.05 21.87 11.98 21.80C11.91 21.73 11.88 21.65 11.88 21.55L11.88 13.57C11.88 13.47 11.83 13.42 11.73 13.42L6.12 13.42C6.02 13.42 5.98 13.47 5.98 13.57L5.98 21.55C5.98 21.65 5.94 21.73 5.87 21.80C5.80 21.87 5.72 21.90 5.61 21.90L1.36 21.90C1.26 21.90 1.18 21.87 1.10 21.80C1.03 21.73 1.00 21.65 1.00 21.55L1.00 1.28C1.00 1.18 1.03 1.10 1.10 1.03C1.18 0.96 1.26 0.93 1.36 0.93L5.61 0.93C5.72 0.93 5.80 0.96 5.87 1.03C5.94 1.10 5.98 1.18 5.98 1.28L5.98 9.02C5.98 9.12 6.02 9.17 6.12 9.17L11.73 9.17C11.83 9.17 11.88 9.12 11.88 9.02L11.88 1.28C11.88 1.18 11.91 1.10 11.98 1.03Z"/><path fill-rule="evenodd" d="M25.65 21.80C25.58 21.73 25.55 21.65 25.55 21.55L25.55 1.28C25.55 1.18 25.58 1.10 25.65 1.03C25.72 0.96 25.80 0.93 25.90 0.93L30.16 0.93C30.26 0.93 30.35 0.96 30.42 1.03C30.49 1.10 30.52 1.18 30.52 1.28L30.52 21.55C30.52 21.65 30.49 21.73 30.42 21.80C30.35 21.87 30.26 21.90 30.16 21.90L25.90 21.90C25.80 21.90 25.72 21.87 25.65 21.80Z"/><path fill-rule="evenodd" d="M39.59 21.80C39.52 21.73 39.48 21.65 39.48 21.55L39.48 1.28C39.48 1.18 39.52 1.10 39.59 1.03C39.66 0.96 39.74 0.93 39.84 0.93L47.48 0.93C49.04 0.93 50.42 1.19 51.62 1.73C52.82 2.27 53.75 3.04 54.41 4.04C55.07 5.04 55.40 6.19 55.40 7.49L55.40 15.34C55.40 16.64 55.07 17.79 54.41 18.79C53.75 19.79 52.82 20.56 51.62 21.10C50.42 21.64 49.04 21.90 47.48 21.90L39.84 21.90C39.74 21.90 39.66 21.87 39.59 21.80M44.61 17.65L47.69 17.65C48.49 17.65 49.14 17.36 49.64 16.79C50.14 16.23 50.40 15.46 50.42 14.50L50.42 8.33C50.42 7.37 50.17 6.60 49.66 6.04C49.15 5.47 48.48 5.18 47.66 5.18L44.61 5.18C44.51 5.18 44.46 5.23 44.46 5.33L44.46 17.50C44.46 17.60 44.51 17.65 44.61 17.65Z"/><path fill-rule="evenodd" d="M75.99 21.60L75.21 18.94C75.17 18.86 75.12 18.82 75.06 18.82L68.22 18.82C68.16 18.82 68.11 18.86 68.07 18.94L67.29 21.60C67.23 21.80 67.09 21.90 66.87 21.90L62.29 21.90C62.17 21.90 62.08 21.87 62.02 21.80C61.96 21.73 61.95 21.63 61.99 21.48L68.40 1.23C68.46 1.03 68.59 0.93 68.79 0.93L74.46 0.93C74.66 0.93 74.79 1.03 74.85 1.23L81.29 21.48C81.31 21.53 81.32 21.57 81.32 21.64C81.32 21.81 81.21 21.90 80.99 21.90L76.41 21.90C76.19 21.90 76.05 21.80 75.99 21.60M69.39 14.98L73.86 14.98C73.98 14.98 74.02 14.92 73.98 14.80L71.70 7.10C71.68 7.02 71.65 6.98 71.61 6.99C71.57 7.00 71.54 7.04 71.52 7.10L69.27 14.80C69.25 14.92 69.29 14.98 69.39 14.98Z"/><path fill-rule="evenodd" d="M89.61 21.80C89.54 21.73 89.50 21.65 89.50 21.55L89.50 1.28C89.50 1.18 89.54 1.10 89.61 1.03C89.68 0.96 89.76 0.93 89.86 0.93L94.12 0.93C94.22 0.93 94.30 0.96 94.37 1.03C94.44 1.10 94.48 1.18 94.48 1.28L94.48 9.08C94.48 9.14 94.50 9.17 94.54 9.18C94.58 9.19 94.62 9.18 94.66 9.14L100.71 1.14C100.83 1.00 100.97 0.93 101.13 0.93L105.99 0.93C106.19 0.93 106.29 1.00 106.29 1.14C106.29 1.19 106.26 1.27 106.20 1.37L99.72 10.04C99.68 10.12 99.67 10.19 99.69 10.25L106.47 21.49C106.51 21.60 106.52 21.68 106.52 21.69C106.52 21.83 106.42 21.90 106.22 21.90L101.46 21.90C101.24 21.90 101.09 21.82 101.01 21.67L96.31 13.66C96.25 13.54 96.17 13.54 96.10 13.66L94.54 15.79C94.50 15.87 94.48 15.93 94.48 15.97L94.48 21.55C94.48 21.65 94.44 21.73 94.37 21.80C94.30 21.87 94.22 21.90 94.12 21.90L89.86 21.90C89.76 21.90 89.68 21.87 89.61 21.80Z"/><path fill-rule="evenodd" d="M141.02 1.23L141.02 3.14C141.02 3.34 140.92 3.44 140.72 3.44L134.97 3.44C134.89 3.44 134.85 3.48 134.85 3.56L134.85 21.60C134.85 21.80 134.75 21.90 134.55 21.90L132.27 21.90C132.07 21.90 131.97 21.80 131.97 21.60L131.97 3.56C131.97 3.48 131.93 3.44 131.85 3.44L126.37 3.44C126.17 3.44 126.07 3.34 126.07 3.14L126.07 1.23C126.07 1.03 126.17 0.93 126.37 0.93L140.72 0.93C140.92 0.93 141.02 1.03 141.02 1.23Z"/><path fill-rule="evenodd" d="M162.21 21.69L158.01 12.73C157.99 12.67 157.96 12.64 157.89 12.64L153.58 12.64C153.50 12.64 153.46 12.68 153.46 12.76L153.46 21.60C153.46 21.80 153.36 21.90 153.16 21.90L150.88 21.90C150.68 21.90 150.58 21.80 150.58 21.60L150.58 1.23C150.58 1.03 150.68 0.92 150.88 0.92L158.94 0.92C160.14 0.92 161.20 1.17 162.11 1.67C163.01 2.17 163.72 2.87 164.22 3.77C164.72 4.67 164.97 5.71 164.97 6.89C164.97 8.29 164.60 9.47 163.87 10.44C163.14 11.41 162.13 12.06 160.83 12.40C160.75 12.44 160.73 12.49 160.77 12.55L165.12 21.55C165.14 21.58 165.15 21.64 165.15 21.69C165.15 21.83 165.07 21.90 164.91 21.90L162.54 21.90C162.38 21.90 162.27 21.83 162.21 21.69M153.46 3.53L153.46 10.25C153.46 10.33 153.50 10.37 153.58 10.37L158.58 10.37C159.64 10.37 160.49 10.05 161.13 9.42C161.77 8.79 162.09 7.96 162.09 6.92C162.09 5.86 161.77 5.01 161.13 4.37C160.49 3.73 159.64 3.41 158.58 3.41L153.58 3.41C153.50 3.41 153.46 3.45 153.46 3.53Z"/><path fill-rule="evenodd" d="M174.95 21.60L174.95 1.23C174.95 1.03 175.05 0.93 175.25 0.93L177.53 0.93C177.72 0.93 177.82 1.03 177.82 1.23L177.82 21.60C177.82 21.80 177.72 21.90 177.53 21.90L175.25 21.90C175.05 21.90 174.95 21.80 174.95 21.60Z"/><path fill-rule="evenodd" d="M191.70 21.28C190.58 20.68 189.71 19.83 189.09 18.74C188.47 17.65 188.16 16.40 188.16 14.98L188.16 7.85C188.16 6.43 188.47 5.18 189.09 4.10C189.71 3.02 190.58 2.18 191.70 1.58C192.82 0.98 194.11 0.69 195.57 0.69C197.05 0.69 198.34 0.98 199.46 1.58C200.58 2.18 201.45 3.02 202.07 4.10C202.69 5.18 203.00 6.43 203.00 7.85L203.00 14.98C203.00 16.40 202.69 17.65 202.07 18.74C201.45 19.83 200.58 20.68 199.46 21.28C198.34 21.88 197.05 22.17 195.57 22.17C194.11 22.17 192.82 21.88 191.70 21.28M198.86 18.43C199.70 17.59 200.12 16.48 200.12 15.10L200.12 7.82C200.12 6.42 199.70 5.30 198.86 4.45C198.03 3.60 196.92 3.17 195.57 3.17C194.21 3.17 193.11 3.60 192.29 4.45C191.46 5.30 191.04 6.42 191.04 7.82L191.04 15.10C191.04 16.48 191.46 17.59 192.29 18.43C193.11 19.27 194.21 19.69 195.57 19.69C196.92 19.69 198.03 19.27 198.86 18.43Z"/></svg></div>
+  <svg class="stream" id="stream" viewBox="0 0 1600 400" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <div class="txt">
+    <h1><span class="en">Free crossings</span><span class="hu">Szabad átkelések</span></h1>
+    <div class="who">
+      <div><b><span class="en">Péter Cseh</span><span class="hu">Cseh Péter</span></b> <span class="en">guitar</span><span class="hu">gitár</span></div>
+      <div><b><span class="en">Tibor Fonay</span><span class="hu">Fonay Tibor</span></b> <span class="en">double bass, electric bass</span><span class="hu">nagybőgő, basszusgitár</span></div>
+      <div><b><span class="en">Tamás Hidász</span><span class="hu">Hidász Tamás</span></b> <span class="en">drums</span><span class="hu">dob</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="band about" id="about"><div class="wrap">
+  <div>
+    <p class="lead en">The HIDAK Trio is a meeting point for three prominent figures on the Hungarian creative jazz scene. <b>Péter Cseh</b>, <b>Tibor Fonay</b> and <b>Tamás Hidász</b> have already proven themselves in numerous formations. In this trio, however, they unfold their musical visions more freely and fully than ever before.</p>
+    <p class="lead hu">A HIDAK Trio a magyar kreatív jazzélet három meghatározó alakjának találkozási pontja. <b>Cseh Péter</b>, <b>Fonay Tibor</b> és <b>Hidász Tamás</b> számos formációban bizonyítottak már, ebben a trióban azonban minden eddiginél szabadabban és teljesebben bontakoztatják ki zenei elképzeléseiket.</p>
+  </div>
+  <div class="dict">
+    <div class="word">hidak</div>
+    <div class="ipa">[ˈhidɒk] · <span class="en">Hungarian, plural noun — <i>bridges</i></span><span class="hu">a <i>híd</i> szó többes száma</span></div>
+    <p class="en">The HIDAK Trio (hidak means bridges in Hungarian) seeks to connect at different points: the musicians to each other, the performer and the listener, tradition and innovation. Their sound covers a wide spectrum, in which almost anything can serve as inspiration. Rich jazz harmony meets the rhythmic pulsing of minimalist music and slowly flowing streams of sound.</p>
+    <p class="hu">A HIDAK Trio – ahogy a neve is mutatja – különböző pontokon igyekszik hidat verni: a zenészek között, az előadó és a közönség között, a hagyomány és az újítás között. Hangzásuk széles spektrumot ölel fel, amelyben szinte bármi inspirációul szolgálhat. A gazdag jazzharmóniák a minimal zene ritmikus lüktetésével és lassan hömpölygő hangfolyamokkal találkoznak.</p>
+  </div>
+</div></section>
+
+<section class="band band2" id="band"><div class="wrap">
+  <div class="head"><h2><span class="en">The band</span><span class="hu">A zenekar</span></h2></div>
+  <div class="members">
+    <article class="m">
+      <figure><img src="img/cseh.jpg" alt="Péter Cseh with his guitar in the studio" loading="lazy"></figure>
+      <div><h3><span class="en">Péter Cseh</span><span class="hu">Cseh Péter</span></h3>
+      <div class="ins"><span class="en">Guitar</span><span class="hu">Gitár</span></div>
+      <p class="en">Junior Prima Award, Artisjus Award, Fonogram Award, as well as first prizes at international competitions with various bands and as a soloist (Jazzx Showcase, JazzJuniors Kraków, Müpa Jazz Showcase). Member of the Emma Nagy Quintet, Viktor Tóth Skylark Metropolitan, Dániel Mester Trio, and numerous other ensembles.</p>
+      <p class="hu">Junior Prima díj, Artisjus-díj, Fonogram-díj, valamint nemzetközi versenyek első díjai különböző zenekarokkal és szólistaként (Jazzx Showcase, JazzJuniors Kraków, Müpa Jazz Showcase). A Nagy Emma Quintet, a Tóth Viktor Skylark Metropolitan, a Mester Dániel Trio és számos más formáció tagja.</p></div>
+    </article>
+    <article class="m">
+      <figure><img src="img/fonay.jpg" alt="Tibor Fonay playing electric bass" loading="lazy"></figure>
+      <div><h3><span class="en">Tibor Fonay</span><span class="hu">Fonay Tibor</span></h3>
+      <div class="ins"><span class="en">Double bass, electric bass</span><span class="hu">Nagybőgő, basszusgitár</span></div>
+      <p class="en">Junior Prima Award, two-time Fonogram Award winner, Vásárhelyi Arts Award, and first prize at the Jackie Orszáczky bass guitar competition. Among his orchestral collaborations, the Péter Sárik Trio, the Subtones, Syrius Legacy, the Binder Trio/Quartet, and the Richárd Révész Latin Trio/Quartet stand out.</p>
+      <p class="hu">Junior Prima díj, kétszeres Fonogram-díj, Vásárhelyi Művészeti Díj, valamint első díj az Orszáczky Jackie Basszusgitár Versenyen. Zenekari együttműködései közül kiemelkedik a Sárik Péter Trio, a Subtones, a Syrius Legacy, a Binder Trio/Quartet és a Révész Richárd Latin Trio/Quartet.</p></div>
+    </article>
+    <article class="m">
+      <figure><img src="img/hidasz.jpg" alt="Tamás Hidász in a black cap" loading="lazy"></figure>
+      <div><h3><span class="en">Tamás Hidász</span><span class="hu">Hidász Tamás</span></h3>
+      <div class="ins"><span class="en">Drums</span><span class="hu">Dob</span></div>
+      <p class="en">First place winner in numerous domestic and international jazz competitions with Tamás Balogh’s band; recipient of the Dezső Lakatos-Ablakos Scholarship; his collaborations include: the Attila László Quartet, the Binder Trio / Quartet, the Rafael Mário Trio, and the Barna Pély Band.</p>
+      <p class="hu">Balogh Tamás zenekarával számos hazai és nemzetközi jazzverseny első helyezettje, Lakatos „Ablakos” Dezső-ösztöndíjas. Együttműködései közül: László Attila Quartet, Binder Trio / Quartet, Rafael Mário Trio, Pély Barna Band.</p></div>
+    </article>
+  </div>
+</div></section>
+
+<section class="band" id="recordings"><div class="wrap">
+  <div class="head"><h2><span class="en">Recordings</span><span class="hu">Felvételek</span></h2></div>
+  <div class="recs">
+    <article class="rec">
+      <div class="media">
+        <a class="vid" href="https://www.youtube.com/watch?v=ayLJcELnNNE&amp;list=PL3aCP9iTQL9nhzWKj5ysANhSCBjt2Eihf" target="_blank" rel="noopener"><img src="img/downpour.jpg" alt="Studio live session of Downpour" loading="lazy"><span class="play" aria-hidden="true"></span></a>
+        <a href="https://hidaktrio.bandcamp.com/album/downpour" target="_blank" rel="noopener"><img class="cover-art" src="img/downpour-cover.jpg" alt="Downpour EP cover" loading="lazy"></a>
+      </div>
+      <h3>Downpour EP</h3>
+      <p class="en">The band’s music was first documented on a studio live session available as an EP as well as three separate videos.</p>
+      <p class="hu">A zenekar zenéjét először egy stúdiós live session örökítette meg, amely EP-ként, valamint három különálló videóként is elérhető.</p>
+      <div class="btns">
+        <a class="btn solid" href="https://hidaktrio.bandcamp.com/album/downpour" target="_blank" rel="noopener"><span class="en">Listen on Bandcamp</span><span class="hu">Hallgasd a Bandcampen</span></a>
+        <a class="btn" href="https://www.youtube.com/watch?v=ayLJcELnNNE&amp;list=PL3aCP9iTQL9nhzWKj5ysANhSCBjt2Eihf" target="_blank" rel="noopener"><span class="en">Watch the session</span><span class="hu">Nézd meg a sessiont</span></a>
+      </div>
+    </article>
+    <article class="rec">
+      <div class="media" style="margin-bottom:36px">
+      <div class="dn" style="position:absolute;left:12px;top:12px;z-index:3;margin:0;background:var(--bg)" role="group" aria-label="Day or night">
+        <button id="dn-day" type="button" data-v="day" aria-pressed="false"><span class="en">Day</span><span class="hu">Nappal</span></button>
+        <button id="dn-night" type="button" data-v="night" aria-pressed="true"><span class="en">Night</span><span class="hu">Éjszaka</span></button>
+      </div>
+        <a class="vid" id="ha-link" href="https://youtu.be/Ed6s-J4Fj9M" target="_blank" rel="noopener"><img id="ha-img" src="img/night.jpg" alt="The Home Anywhere session, night" loading="lazy"><span class="play" aria-hidden="true"></span></a>
+      </div>
+      <h3>The Home Anywhere Session</h3>
+      <p class="en">The trio’s next recording session took place in a special outdoor location. It yielded two beautiful videos of new original music, one representing day and the other standing for night.</p>
+      <p class="hu">A trió következő felvétele egy különleges szabadtéri helyszínen készült. Két gyönyörű videó született belőle új, saját szerzeményekkel: az egyik a nappalt, a másik az éjszakát idézi meg.</p>
+      <div class="btns">
+        <a class="btn" href="https://youtu.be/UM-dz9G2voU" target="_blank" rel="noopener"><span class="en">Watch: Day</span><span class="hu">Nappal videó</span></a>
+        <a class="btn" href="https://youtu.be/Ed6s-J4Fj9M" target="_blank" rel="noopener"><span class="en">Watch: Night</span><span class="hu">Éjszaka videó</span></a>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<section class="band band2" id="live"><div class="wrap">
+  <div class="head"><h2><span class="en">Live shows</span><span class="hu">Koncertek</span></h2>
+    <p class="en">2026 has been filled with many nice concerts at different types of venues in Hungary. Some of these performances have been documented and made available online.</p>
+    <p class="hu">2026 számos szép koncertet hozott különféle hazai helyszíneken. Ezek közül több fellépés felvétele online is elérhető.</p></div>
+  <div class="live">
+    <figure><a class="vid" href="https://youtu.be/AhL7uMIPruE?si=Zdxk9h5HV4o3s4VA" target="_blank" rel="noopener"><img src="img/opus.jpg" alt="Debut concert at Opus Jazz Club" loading="lazy"><span class="play" aria-hidden="true"></span></a>
+      <figcaption><span class="en">Debut Concert</span><span class="hu">Debütáló koncert</span><span>Opus Jazz Club</span></figcaption></figure>
+    <figure><a class="vid" href="https://youtu.be/aP9CagxSIMY?si=F4BNKBdq2A1ghMOe" target="_blank" rel="noopener"><img src="img/a38.jpg" alt="Live TV recording at A38" loading="lazy"><span class="play" aria-hidden="true"></span></a>
+      <figcaption><span class="en">Live TV Recording</span><span class="hu">Élő TV-felvétel</span><span>A38</span></figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band plans" id="plans"><div class="wrap">
+  <div class="head"><h2><span class="en">The road ahead</span><span class="hu">Ami előttünk áll</span></h2></div>
+  <div class="route">
+    <svg id="arch" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"></svg>
+    <ol class="stops">
+      <li><div class="when"><span class="en">First recording</span><span class="hu">Első felvétel</span></div><div class="what">Downpour EP</div></li>
+      <li><div class="when"><span class="en">Second recording</span><span class="hu">Második felvétel</span></div><div class="what">The Home Anywhere Session</div></li>
+      <li><div class="when">2026</div><div class="what"><span class="en">Concerts across Hungary</span><span class="hu">Koncertek itthon</span></div></li>
+      <li class="next"><div class="when">2026–2027</div><div class="what"><span class="en">Festivals and clubs in and around Europe</span><span class="hu">Fesztiválok és klubok Európa-szerte</span></div></li>
+      <li class="next"><div class="when">2027</div><div class="what"><span class="en">Full-length album</span><span class="hu">Nagylemez</span></div></li>
+    </ol>
+  </div>
+  <p class="txt en">Their plans for the rest of 2026 and next year – apart from continuing to work in Hungary – are to go on the road and start playing festivals and club concerts in and around Europe. Following their first two EPs (Downpour and The Home Anywhere Session), they also intend to record and release a full-length album during 2027.</p>
+  <p class="txt hu">2026 hátralévő részére és a jövő évre vonatkozó terveik között – a hazai munka folytatása mellett – az szerepel, hogy útnak induljanak, és Európa-szerte fesztiválokon és klubokban koncertezzenek. Első két EP-jük (Downpour és The Home Anywhere Session) után 2027 folyamán egy nagylemezt is szeretnének felvenni és kiadni.</p>
+</div></section>
+
+<section class="band contact" id="contact"><div class="wrap">
+  <div>
+    <h2 style="margin-bottom:28px"><span class="en">Contact &amp; booking</span><span class="hu">Kapcsolat és booking</span></h2>
+    <div class="rows">
+      <div class="row"><div><div class="k"><span class="en">Contact person</span><span class="hu">Kapcsolattartó</span></div><div class="v"><span class="en">Péter Cseh</span><span class="hu">Cseh Péter</span></div></div></div>
+      <div class="row"><div><div class="k"><span class="en">Phone</span><span class="hu">Telefon</span></div><div class="v"><a href="tel:+36301783250">+36 30 178 3250</a></div></div><button class="copy" id="c-phone" type="button" data-c="+36301783250"><span class="en">Copy</span><span class="hu">Másolás</span></button></div>
+      <div class="row"><div><div class="k">E-mail</div><div class="v"><a href="mailto:hidaktrio@gmail.com">hidaktrio@gmail.com</a></div></div><button class="copy" id="c-mail" type="button" data-c="hidaktrio@gmail.com"><span class="en">Copy</span><span class="hu">Másolás</span></button></div>
+      <div class="row"><div><div class="k">Instagram</div><div class="v"><a href="http://instagram.com/hidaktrio" target="_blank" rel="noopener">@hidaktrio</a></div></div></div>
+      <div class="row"><div><div class="k">Bandcamp</div><div class="v"><a href="http://hidaktrio.bandcamp.com" target="_blank" rel="noopener">hidaktrio.bandcamp.com</a></div></div></div>
+    </div>
+  </div>
+  <div class="bigmark" aria-hidden="true"><svg viewBox="0 0 91 61" style="width:44%;margin-left:28%"><path d="M80.69 7.24C68.23 8.65 54.73 7.90 40.84 6.92C39.06 6.80 37.31 6.67 35.59 6.55C26.20 5.86 18.10 5.27 9.67 5.39L9.61 1.01C18.22 0.90 26.82 1.52 35.91 2.18C37.62 2.31 39.37 2.43 41.15 2.56C55.31 3.55 69.05 4.32 81.48 2.74L82.03 7.08C81.58 7.13 81.14 7.19 80.69 7.24Z"/><path d="M83.23 27.88C70.78 29.30 57.22 28.56 43.29 27.58C41.51 27.46 39.77 27.33 38.06 27.21C24.99 26.25 13.70 25.43 1.22 26.63L0.80 22.28C13.65 21.04 25.11 21.88 38.38 22.84C40.09 22.97 41.82 23.09 43.60 23.22C59.66 24.35 75.21 25.15 88.85 22.64L89.64 26.94C87.54 27.32 85.41 27.64 83.23 27.88Z"/><path d="M81.98 17.56C69.54 18.97 55.99 18.23 42.07 17.25C40.28 17.13 38.53 17.00 36.81 16.88C24.89 16.01 14.59 15.26 3.48 16.02L3.18 11.65C14.60 10.87 25.04 11.63 37.13 12.51C38.85 12.64 40.59 12.76 42.37 12.89C58.01 13.99 73.15 14.79 86.52 12.50L87.25 16.81C85.52 17.11 83.76 17.36 81.98 17.56Z"/><path d="M84.43 38.22C71.98 39.63 58.44 38.89 44.52 37.91C42.74 37.79 40.99 37.66 39.28 37.54C25.92 36.56 14.38 35.72 1.55 37.05L1.10 32.70C14.31 31.33 26.03 32.19 39.60 33.17C41.31 33.30 43.05 33.43 44.83 33.55C60.31 34.64 75.31 35.43 88.58 33.23L89.30 37.54C87.70 37.81 86.07 38.03 84.43 38.22Z"/><path d="M85.60 48.56C73.13 49.97 59.63 49.22 45.75 48.24C43.96 48.12 42.22 47.99 40.51 47.87C27.49 46.92 16.25 46.10 3.84 47.28L3.43 42.92C16.20 41.71 27.61 42.54 40.83 43.50C42.53 43.63 44.27 43.76 46.05 43.88C59.91 44.85 73.36 45.62 85.61 44.15L86.12 48.50C85.95 48.52 85.77 48.54 85.60 48.56Z"/><path d="M78.93 59.51C69.56 59.94 59.76 59.47 46.97 58.57C45.19 58.45 43.44 58.32 41.72 58.20C30.17 57.36 20.20 56.63 9.51 57.27L9.25 52.90C20.23 52.25 30.34 52.98 42.04 53.83C43.75 53.96 45.50 54.09 47.28 54.21C59.91 55.10 69.57 55.56 78.72 55.14L78.93 59.51Z"/></svg><svg class="w" viewBox="0 0 204 23"><path fill-rule="evenodd" d="M11.98 1.03C12.05 0.96 12.14 0.93 12.24 0.93L16.49 0.93C16.59 0.93 16.68 0.96 16.75 1.03C16.82 1.10 16.85 1.18 16.85 1.28L16.85 21.55C16.85 21.65 16.82 21.73 16.75 21.80C16.68 21.87 16.59 21.90 16.49 21.90L12.24 21.90C12.14 21.90 12.05 21.87 11.98 21.80C11.91 21.73 11.88 21.65 11.88 21.55L11.88 13.57C11.88 13.47 11.83 13.42 11.73 13.42L6.12 13.42C6.02 13.42 5.98 13.47 5.98 13.57L5.98 21.55C5.98 21.65 5.94 21.73 5.87 21.80C5.80 21.87 5.72 21.90 5.61 21.90L1.36 21.90C1.26 21.90 1.18 21.87 1.10 21.80C1.03 21.73 1.00 21.65 1.00 21.55L1.00 1.28C1.00 1.18 1.03 1.10 1.10 1.03C1.18 0.96 1.26 0.93 1.36 0.93L5.61 0.93C5.72 0.93 5.80 0.96 5.87 1.03C5.94 1.10 5.98 1.18 5.98 1.28L5.98 9.02C5.98 9.12 6.02 9.17 6.12 9.17L11.73 9.17C11.83 9.17 11.88 9.12 11.88 9.02L11.88 1.28C11.88 1.18 11.91 1.10 11.98 1.03Z"/><path fill-rule="evenodd" d="M25.65 21.80C25.58 21.73 25.55 21.65 25.55 21.55L25.55 1.28C25.55 1.18 25.58 1.10 25.65 1.03C25.72 0.96 25.80 0.93 25.90 0.93L30.16 0.93C30.26 0.93 30.35 0.96 30.42 1.03C30.49 1.10 30.52 1.18 30.52 1.28L30.52 21.55C30.52 21.65 30.49 21.73 30.42 21.80C30.35 21.87 30.26 21.90 30.16 21.90L25.90 21.90C25.80 21.90 25.72 21.87 25.65 21.80Z"/><path fill-rule="evenodd" d="M39.59 21.80C39.52 21.73 39.48 21.65 39.48 21.55L39.48 1.28C39.48 1.18 39.52 1.10 39.59 1.03C39.66 0.96 39.74 0.93 39.84 0.93L47.48 0.93C49.04 0.93 50.42 1.19 51.62 1.73C52.82 2.27 53.75 3.04 54.41 4.04C55.07 5.04 55.40 6.19 55.40 7.49L55.40 15.34C55.40 16.64 55.07 17.79 54.41 18.79C53.75 19.79 52.82 20.56 51.62 21.10C50.42 21.64 49.04 21.90 47.48 21.90L39.84 21.90C39.74 21.90 39.66 21.87 39.59 21.80M44.61 17.65L47.69 17.65C48.49 17.65 49.14 17.36 49.64 16.79C50.14 16.23 50.40 15.46 50.42 14.50L50.42 8.33C50.42 7.37 50.17 6.60 49.66 6.04C49.15 5.47 48.48 5.18 47.66 5.18L44.61 5.18C44.51 5.18 44.46 5.23 44.46 5.33L44.46 17.50C44.46 17.60 44.51 17.65 44.61 17.65Z"/><path fill-rule="evenodd" d="M75.99 21.60L75.21 18.94C75.17 18.86 75.12 18.82 75.06 18.82L68.22 18.82C68.16 18.82 68.11 18.86 68.07 18.94L67.29 21.60C67.23 21.80 67.09 21.90 66.87 21.90L62.29 21.90C62.17 21.90 62.08 21.87 62.02 21.80C61.96 21.73 61.95 21.63 61.99 21.48L68.40 1.23C68.46 1.03 68.59 0.93 68.79 0.93L74.46 0.93C74.66 0.93 74.79 1.03 74.85 1.23L81.29 21.48C81.31 21.53 81.32 21.57 81.32 21.64C81.32 21.81 81.21 21.90 80.99 21.90L76.41 21.90C76.19 21.90 76.05 21.80 75.99 21.60M69.39 14.98L73.86 14.98C73.98 14.98 74.02 14.92 73.98 14.80L71.70 7.10C71.68 7.02 71.65 6.98 71.61 6.99C71.57 7.00 71.54 7.04 71.52 7.10L69.27 14.80C69.25 14.92 69.29 14.98 69.39 14.98Z"/><path fill-rule="evenodd" d="M89.61 21.80C89.54 21.73 89.50 21.65 89.50 21.55L89.50 1.28C89.50 1.18 89.54 1.10 89.61 1.03C89.68 0.96 89.76 0.93 89.86 0.93L94.12 0.93C94.22 0.93 94.30 0.96 94.37 1.03C94.44 1.10 94.48 1.18 94.48 1.28L94.48 9.08C94.48 9.14 94.50 9.17 94.54 9.18C94.58 9.19 94.62 9.18 94.66 9.14L100.71 1.14C100.83 1.00 100.97 0.93 101.13 0.93L105.99 0.93C106.19 0.93 106.29 1.00 106.29 1.14C106.29 1.19 106.26 1.27 106.20 1.37L99.72 10.04C99.68 10.12 99.67 10.19 99.69 10.25L106.47 21.49C106.51 21.60 106.52 21.68 106.52 21.69C106.52 21.83 106.42 21.90 106.22 21.90L101.46 21.90C101.24 21.90 101.09 21.82 101.01 21.67L96.31 13.66C96.25 13.54 96.17 13.54 96.10 13.66L94.54 15.79C94.50 15.87 94.48 15.93 94.48 15.97L94.48 21.55C94.48 21.65 94.44 21.73 94.37 21.80C94.30 21.87 94.22 21.90 94.12 21.90L89.86 21.90C89.76 21.90 89.68 21.87 89.61 21.80Z"/><path fill-rule="evenodd" d="M141.02 1.23L141.02 3.14C141.02 3.34 140.92 3.44 140.72 3.44L134.97 3.44C134.89 3.44 134.85 3.48 134.85 3.56L134.85 21.60C134.85 21.80 134.75 21.90 134.55 21.90L132.27 21.90C132.07 21.90 131.97 21.80 131.97 21.60L131.97 3.56C131.97 3.48 131.93 3.44 131.85 3.44L126.37 3.44C126.17 3.44 126.07 3.34 126.07 3.14L126.07 1.23C126.07 1.03 126.17 0.93 126.37 0.93L140.72 0.93C140.92 0.93 141.02 1.03 141.02 1.23Z"/><path fill-rule="evenodd" d="M162.21 21.69L158.01 12.73C157.99 12.67 157.96 12.64 157.89 12.64L153.58 12.64C153.50 12.64 153.46 12.68 153.46 12.76L153.46 21.60C153.46 21.80 153.36 21.90 153.16 21.90L150.88 21.90C150.68 21.90 150.58 21.80 150.58 21.60L150.58 1.23C150.58 1.03 150.68 0.92 150.88 0.92L158.94 0.92C160.14 0.92 161.20 1.17 162.11 1.67C163.01 2.17 163.72 2.87 164.22 3.77C164.72 4.67 164.97 5.71 164.97 6.89C164.97 8.29 164.60 9.47 163.87 10.44C163.14 11.41 162.13 12.06 160.83 12.40C160.75 12.44 160.73 12.49 160.77 12.55L165.12 21.55C165.14 21.58 165.15 21.64 165.15 21.69C165.15 21.83 165.07 21.90 164.91 21.90L162.54 21.90C162.38 21.90 162.27 21.83 162.21 21.69M153.46 3.53L153.46 10.25C153.46 10.33 153.50 10.37 153.58 10.37L158.58 10.37C159.64 10.37 160.49 10.05 161.13 9.42C161.77 8.79 162.09 7.96 162.09 6.92C162.09 5.86 161.77 5.01 161.13 4.37C160.49 3.73 159.64 3.41 158.58 3.41L153.58 3.41C153.50 3.41 153.46 3.45 153.46 3.53Z"/><path fill-rule="evenodd" d="M174.95 21.60L174.95 1.23C174.95 1.03 175.05 0.93 175.25 0.93L177.53 0.93C177.72 0.93 177.82 1.03 177.82 1.23L177.82 21.60C177.82 21.80 177.72 21.90 177.53 21.90L175.25 21.90C175.05 21.90 174.95 21.80 174.95 21.60Z"/><path fill-rule="evenodd" d="M191.70 21.28C190.58 20.68 189.71 19.83 189.09 18.74C188.47 17.65 188.16 16.40 188.16 14.98L188.16 7.85C188.16 6.43 188.47 5.18 189.09 4.10C189.71 3.02 190.58 2.18 191.70 1.58C192.82 0.98 194.11 0.69 195.57 0.69C197.05 0.69 198.34 0.98 199.46 1.58C200.58 2.18 201.45 3.02 202.07 4.10C202.69 5.18 203.00 6.43 203.00 7.85L203.00 14.98C203.00 16.40 202.69 17.65 202.07 18.74C201.45 19.83 200.58 20.68 199.46 21.28C198.34 21.88 197.05 22.17 195.57 22.17C194.11 22.17 192.82 21.88 191.70 21.28M198.86 18.43C199.70 17.59 200.12 16.48 200.12 15.10L200.12 7.82C200.12 6.42 199.70 5.30 198.86 4.45C198.03 3.60 196.92 3.17 195.57 3.17C194.21 3.17 193.11 3.60 192.29 4.45C191.46 5.30 191.04 6.42 191.04 7.82L191.04 15.10C191.04 16.48 191.46 17.59 192.29 18.43C193.11 19.27 194.21 19.69 195.57 19.69C196.92 19.69 198.03 19.27 198.86 18.43Z"/></svg></div>
+</div></section>
+<footer><span>HIDAK Trio · <span class="en">Electronic press kit 2026</span><span class="hu">Sajtóanyag 2026</span></span><a href="#top"><span class="en">Back to top</span><span class="hu">Vissza a tetejére</span></a></footer>
+
+<script>
+{
+  const root=document.documentElement;
+  const setLang=l=>{root.dataset.lang=l;root.lang=l;document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.set===l));try{localStorage.setItem('hidak-lang',l)}catch(e){}};
+  let saved=null;try{saved=localStorage.getItem('hidak-lang')}catch(e){}
+  setLang(saved==='hu'||saved==='en'?saved:((navigator.language||'').startsWith('hu')?'hu':'en'));
+  document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.set)));
+
+  const V={day:['https://youtu.be/UM-dz9G2voU','img/day.jpg','The Home Anywhere session, day'],night:['https://youtu.be/Ed6s-J4Fj9M','img/night.jpg','The Home Anywhere session, night']};
+  const link=document.getElementById('ha-link'),img=document.getElementById('ha-img');
+  document.querySelectorAll('.dn button').forEach(b=>b.addEventListener('click',()=>{
+    const v=V[b.dataset.v];link.href=v[0];img.style.opacity=0;
+    setTimeout(()=>{img.src=v[1];img.alt=v[2];img.style.opacity=1},180);
+    document.querySelectorAll('.dn button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  }));
+
+  document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{
+    const en=b.querySelector('.en'),hu=b.querySelector('.hu');
+    try{await navigator.clipboard.writeText(b.dataset.c);en.textContent='Copied';hu.textContent='Másolva'}
+    catch(e){en.textContent='Select it above';hu.textContent='Jelöld ki fent'}
+    setTimeout(()=>{en.textContent='Copy';hu.textContent='Másolás'},1800);
+  }));
+
+  // drifting stream lines, echoing the wave-line mark
+  const s=document.getElementById('stream');
+  const N=9,paths=[];
+  for(let i=0;i<N;i++){
+    const y=60+i*36,a=10+i*2.2,ph=i*0.7;
+    let d='';for(let x=0;x<=3200;x+=40){const yy=y+Math.sin(x/260+ph)*a;d+=(x?'L':'M')+x+' '+yy.toFixed(1)}
+    paths.push(`<path d="${d}" style="opacity:${(0.35+i*0.07).toFixed(2)}"/>`);
+  }
+  s.innerHTML=paths.join('');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    const els=[...s.querySelectorAll('path')];let t0=null;
+    const step=t=>{if(t0===null)t0=t;const k=(t-t0)/1000;els.forEach((p,i)=>{const sp=14+i*3;p.setAttribute('transform',`translate(${-((k*sp)%1633)} 0)`)});requestAnimationFrame(step)};
+    requestAnimationFrame(step);
+  }
+
+  // bridge arch for the plans route
+  const arch=document.getElementById('arch');
+  let ad='M0 118 Q500 -40 1000 118';
+  let hang='';for(let i=1;i<10;i++){const x=i*100,t=x/1000,y=(1-t)*(1-t)*118+2*(1-t)*t*(-40)+t*t*118;hang+=`<path class="deck" d="M${x} ${y.toFixed(1)} L${x} 118"/>`}
+  arch.innerHTML=`<path class="deck" d="M0 118 L1000 118"/>${hang}<path d="${ad}"/>`;
+}
+</script>
+</body>
+</html>
