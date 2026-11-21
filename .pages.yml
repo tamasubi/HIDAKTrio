@@ -1,0 +1,101 @@
+media:
+  input: img
+  output: img
+
+content:
+  - name: epk
+    label: Weboldal tartalma (EPK)
+    type: file
+    path: content.json
+    fields:
+      - name: hero
+        label: 1. Főoldal (Hero)
+        type: object
+        fields:
+          - { name: cover_img, label: Borítókép, type: image }
+          - { name: title_hu, label: Főcím (Magyar), type: string }
+          - { name: title_en, label: Főcím (Angol), type: string }
+
+      - name: about
+        label: 2. Rólunk (About)
+        type: object
+        fields:
+          - { name: lead_hu, label: Bevezető szöveg (Magyar), type: text }
+          - { name: lead_en, label: Bevezető szöveg (EN), type: text }
+          - { name: dict_hu, label: Szótár leírás (Magyar), type: text }
+          - { name: dict_en, label: Szótár leírás (EN), type: text }
+
+      - name: band
+        label: 3. Zenekar tagjai
+        type: object
+        list: true
+        fields:
+          - { name: img, label: Portré fotó, type: image }
+          - { name: name_hu, label: Név (Magyar), type: string }
+          - { name: name_en, label: Név (Angol), type: string }
+          - { name: ins_hu, label: Hangszer (Magyar), type: string }
+          - { name: ins_en, label: Hangszer (Angol), type: string }
+          - { name: bio_hu, label: Bemutatkozás (Magyar), type: text }
+          - { name: bio_en, label: Bemutatkozás (Angol), type: text }
+
+      - name: recordings
+        label: 4. Felvételek (Recordings)
+        type: object
+        fields:
+          - { name: ep_thumb, label: Downpour videó kép, type: image }
+          - { name: ep_cover, label: Downpour borítókép, type: image }
+          - { name: ep_bandcamp, label: Downpour Bandcamp link, type: string }
+          - { name: ep_youtube, label: Downpour YouTube link, type: string }
+          - { name: ep_desc_hu, label: Downpour leírás (Magyar), type: text }
+          - { name: ep_desc_en, label: Downpour leírás (EN), type: text }
+          - { name: ha_day_img, label: Home Anywhere (Nappal) kép, type: image }
+          - { name: ha_day_youtube, label: Home Anywhere (Nappal) YouTube, type: string }
+          - { name: ha_night_img, label: Home Anywhere (Éjszaka) kép, type: image }
+          - { name: ha_night_youtube, label: Home Anywhere (Éjszaka) YouTube, type: string }
+          - { name: ha_desc_hu, label: Home Anywhere leírás (Magyar), type: text }
+          - { name: ha_desc_en, label: Home Anywhere leírás (EN), type: text }
+
+      - name: live
+        label: 5. Koncertek (Live)
+        type: object
+        fields:
+          - { name: intro_hu, label: Koncertek bevezető (Magyar), type: text }
+          - { name: intro_en, label: Koncertek bevezető (EN), type: text }
+          - name: videos
+            label: Koncert videók
+            type: object
+            list: true
+            fields:
+              - { name: title_hu, label: Cím (Magyar), type: string }
+              - { name: title_en, label: Cím (Angol), type: string }
+              - { name: venue, label: Helyszín, type: string }
+              - { name: img, label: Előnézeti kép, type: image }
+              - { name: youtube, label: YouTube link, type: string }
+
+      - name: plans
+        label: 6. Tervek (Híd állomások)
+        type: object
+        fields:
+          - name: stops
+            label: Állomások
+            type: object
+            list: true
+            fields:
+              - { name: when_hu, label: Időpont (Magyar), type: string }
+              - { name: when_en, label: Időpont (Angol), type: string }
+              - { name: what_hu, label: Esemény (Magyar), type: string }
+              - { name: what_en, label: Esemény (Angol), type: string }
+              - { name: upcoming, label: Jövőbeli állomás? (teli pötty), type: boolean }
+          - { name: summary_hu, label: Összegző szöveg (Magyar), type: text }
+          - { name: summary_en, label: Összegző szöveg (Angol), type: text }
+
+      - name: contact
+        label: 7. Kapcsolat
+        type: object
+        fields:
+          - { name: person_hu, label: Kapcsolattartó (Magyar), type: string }
+          - { name: person_en, label: Kapcsolattartó (Angol), type: string }
+          - { name: phone, label: Telefonszám, type: string }
+          - { name: email, label: E-mail cím, type: string }
+          - { name: instagram, label: Instagram felhasználónév (@ nélkül), type: string }
+          - { name: bandcamp, label: Bandcamp domain, type: string }
