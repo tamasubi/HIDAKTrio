@@ -322,6 +322,144 @@ footer{padding:24px max(5vw,16px);border-top:1px solid var(--line);color:var(--m
   let hang='';for(let i=1;i<10;i++){const x=i*100,t=x/1000,y=(1-t)*(1-t)*118+2*(1-t)*t*(-40)+t*t*118;hang+=`<path class="deck" d="M${x} ${y.toFixed(1)} L${x} 118"/>`}
   arch.innerHTML=`<path class="deck" d="M0 118 L1000 118"/>${hang}<path d="${ad}"/>`;
 }
+  // CMS tartalom betöltése a content.json fájlból
+  fetch('content.json?v=' + Date.now())
+    .then(r => r.json())
+    .then(d => {
+      const setHtml = (sel, val) => { const el = document.querySelector(sel); if (el && val) el.innerHTML = val; };
+      const setText = (sel, val) => { const el = document.querySelector(sel); if (el && val) el.textContent = val; };
+
+      // Hero
+      if (d.hero) {
+        const cover = document.querySelector('.hero > img');
+        if (cover && d.hero.cover_img) cover.src = d.hero.cover_img;
+        setText('.hero h1 .en', d.hero.title_en);
+        setText('.hero h1 .hu', d.hero.title_hu);
+      }
+
+      // About
+      if (d.about) {
+        setHtml('#about .lead.en', d.about.lead_en);
+        setHtml('#about .lead.hu', d.about.lead_hu);
+        setHtml('#about .dict p.en', d.about.dict_en);
+        setHtml('#about .dict p.hu', d.about.dict_hu);
+      }
+
+      // Band
+      if (d.band && d.band.length) {
+        const cards = document.querySelectorAll('#band .m');
+        d.band.forEach((m, i) => {
+          if (!cards[i]) return;
+          cards[i].querySelector('img').src = m.img;
+          cards[i].querySelector('h3 .en').textContent = m.name_en;
+          cards[i].querySelector('h3 .hu').textContent = m.name_hu;
+          cards[i].querySelector('.ins .en').textContent = m.ins_en;
+          cards[i].querySelector('.ins .hu').textContent = m.ins_hu;
+          cards[i].querySelector('p.en').textContent = m.bio_en;
+          cards[i].querySelector('p.hu').textContent = m.bio_hu;
+        });
+      }
+
+      // Recordings
+      if (d.recordings) {
+        const recs = document.querySelectorAll('#recordings .rec');
+        if (recs) {
+          recs.querySelector('.vid').href = d.recordings.ep_youtube;
+          recs.querySelector('.vid img').src = d.recordings.ep_thumb;
+          recs.querySelector('.cover-art').parentElement.href = d.recordings.ep_bandcamp;
+          recs.querySelector('.cover-art').src = d.recordings.ep_cover;
+          recs.querySelector('p.en').textContent = d.recordings.ep_desc_en;
+          recs.querySelector('p.hu').textContent = d.recordings.ep_desc_hu;
+          recs.querySelector('.btns .solid').href = d.recordings.ep_bandcamp;
+          recs.querySelector('.btns a:last-child').href = d.recordings.ep_youtube;
+        }
+        if (recs) {
+          recs.querySelector('p.en').textContent = d.recordings.ha_desc_en;
+          recs.querySelector('p.hu').textContent = d.recordings.ha_desc_hu;
+          const btns = recs.querySelectorAll('.btns a');
+          if (btns) btns.href = d.recordings.ha_day_youtube;
+          if (btns) btns.href = d.recordings.ha_night_youtube;
+          V.day = [d.recordings.ha_day_youtube, d.recordings.ha_day_img, 'The Home Anywhere session, day'];
+          V.night = [d.recordings.ha_night_youtube, d.recordings.ha_night_img, 'The Home Anywhere session, night'];
+          const isNight = document.getElementById('dn-night').getAttribute('aria-pressed') === 'true';
+          const cur = isNight ? V.night : V.day;
+          document.getElementById('ha-link').href = cur;
+          document.getElementById('ha-img').src = cur;
+        }
+      }
+
+      // Live shows
+      if (d.live) {
+        setText('#live .head p.en', d.live.intro_en);
+        setText('#live .head p.hu', d.live.intro_hu);
+        const liveGrid = document.querySelector('#live .live');
+        if (liveGrid && d.live.videos) {
+          liveGrid.innerHTML = d.live.videos.map(v => `
+            <figure>
+              <a class="vid" href="${v.youtube}" target="_blank" rel="noopener">
+                <img src="${v.img}" alt="${v.title_en}" loading="lazy">
+                <span class="play" aria-hidden="true"></span>
+              </a>
+              <figcaption>
+                <span class="en">${v.title_en}</span>
+                <span class="hu">${v.title_hu}</span>
+                <span>${v.venue}</span>
+              </figcaption>
+            </figure>
+          `).join('');
+        }
+      }
+
+      // Plans
+      if (d.plans) {
+        const stopsList = document.querySelector('#plans .stops');
+        if (stopsList && d.plans.stops) {
+          stopsList.innerHTML = d.plans.stops.map(s => `
+            <li class="${s.upcoming ? 'next' : ''}">
+              <div class="when"><span class="en">${s.when_en}</span><span class="hu">${s.when_hu}</span></div>
+              <div class="what"><span class="en">${s.what_en}</span><span class="hu">${s.what_hu}</span></div>
+            </li>
+          `).join('');
+        }
+        setText('#plans .txt.en', d.plans.summary_en);
+        setText('#plans .txt.hu', d.plans.summary_hu);
+      }
+
+      // Contact
+      if (d.contact) {
+        const rows = document.querySelectorAll('#contact .row');
+        if (rows) {
+          rows.querySelector('.v .en').textContent = d.contact.person_en;
+          rows.querySelector('.v .hu').textContent = d.contact.person_hu;
+        }
+        if (rows) {
+          const a = rows.querySelector('a');
+          a.textContent = d.contact.phone;
+          a.href = 'tel:' + d.contact.phone.replace(/\s+/g, '');
+          const btn = rows.querySelector('button');
+          if (btn) btn.dataset.c = d.contact.phone;
+        }
+        if (rows) {
+          const a = rows.querySelector('a');
+          a.textContent = d.contact.email;
+          a.href = 'mailto:' + d.contact.email;
+          const btn = rows.querySelector('button');
+          if (btn) btn.dataset.c = d.contact.email;
+        }
+        if (rows) {
+          const a = rows.querySelector('a');
+          a.textContent = '@' + d.contact.instagram;
+          a.href = 'https://instagram.com' + d.contact.instagram;
+        }
+        if (rows) {
+          const a = rows.querySelector('a');
+          a.textContent = d.contact.bandcamp;
+          a.href = 'https://' + d.contact.bandcamp;
+        }
+      }
+    })
+    .catch(err => console.warn('CMS tartalom betöltése sikertelen:', err));
+
 </script>
 </body>
 </html>
