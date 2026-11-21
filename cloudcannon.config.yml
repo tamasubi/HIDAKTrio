@@ -21,6 +21,9 @@ collections_config:
     icon: edit_note
     disable_add: true
     disable_add_folder: true
+    _enabled_editors:
+      - data
+    default_editor: data
 
 _inputs:
   cover_img:
