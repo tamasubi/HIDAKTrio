@@ -1,0 +1,95 @@
+{
+  "hero": {
+    "cover_img": "img/cover.jpg",
+    "title_en": "Free crossings",
+    "title_hu": "Szabad átkelések"
+  },
+  "about": {
+    "lead_en": "The HIDAK Trio is a meeting point for three prominent figures on the Hungarian creative jazz scene. <b>Péter Cseh</b>, <b>Tibor Fonay</b> and <b>Tamás Hidász</b> have already proved themselves in numerous formations.",
+    "lead_hu": "A HIDAK Trio a magyar kreatív jazzélet három meghatározó alakjának találkozási pontja. <b>Cseh Péter</b>, <b>Fonay Tibor</b> és <b>Hidász Tamás</b> számos formációban bizonyítottak már.",
+    "dict_en": "The HIDAK Trio (hidak means bridges in Hungarian) seeks to connect at different points: the musicians to each other, the performer and the listener, tradition and innovation. Their sound covers a wide spectrum, in which almost anything can serve as inspiration.",
+    "dict_hu": "A HIDAK Trio – ahogy a neve is mutatja – különböző pontokon igyekszik hidat verni: a zenészek között, az előadó és a közönség között, a hagyomány és az újítás között. Hangzásuk széles spektrumot ölel fel."
+  },
+  "band": [
+    {
+      "img": "img/cseh.jpg",
+      "name_en": "Péter Cseh",
+      "name_hu": "Cseh Péter",
+      "ins_en": "Guitar",
+      "ins_hu": "Gitár",
+      "bio_en": "Junior Prima Award, Artisjus Award, Fonogram Award, as well as first prizes at international competitions with various bands and as a soloist (Jazzx Showcase, JazzJuniors Kraków, Müpa Jazz Showcase).",
+      "bio_hu": "Junior Prima díj, Artisjus-díj, Fonogram-díj, valamint nemzetközi versenyek első díjai különböző zenekarokkal és szólistaként (Jazzx Showcase, JazzJuniors Kraków, Müpa Jazz Showcase)."
+    },
+    {
+      "img": "img/fonay.jpg",
+      "name_en": "Tibor Fonay",
+      "name_hu": "Fonay Tibor",
+      "ins_en": "Double bass, electric bass",
+      "ins_hu": "Nagybőgő, basszusgitár",
+      "bio_en": "Junior Prima Award, two-time Fonogram Award winner, Vásárhelyi Arts Award, and first prize at the Jackie Orszáczky bass guitar competition.",
+      "bio_hu": "Junior Prima díj, kétszeres Fonogram-díj, Vásárhelyi Művészeti Díj, valamint első díj az Orszáczky Jackie Basszusgitár Versenyen."
+    },
+    {
+      "img": "img/hidasz.jpg",
+      "name_en": "Tamás Hidász",
+      "name_hu": "Hidász Tamás",
+      "ins_en": "Drums",
+      "ins_hu": "Dob",
+      "bio_en": "First place winner in numerous domestic and international jazz competitions with Tamás Balogh’s band; recipient of the Dezső Lakatos-Ablakos Scholarship.",
+      "bio_hu": "Balogh Tamás zenekarával számos hazai és nemzetközi jazzverseny első helyezettje, Lakatos „Ablakos” Dezső-ösztöndíjas. Együttműködései közül: László Attila Quartet, Binder Trio / Quartet."
+    }
+  ],
+  "recordings": {
+    "ep_thumb": "img/downpour.jpg",
+    "ep_cover": "img/downpour-cover.jpg",
+    "ep_bandcamp": "https://bandcamp.com",
+    "ep_youtube": "https://youtube.com",
+    "ep_desc_en": "The band’s music was first documented on a studio live session available as an EP as well as three separate videos.",
+    "ep_desc_hu": "A zenekar zenéjét először egy stúdiós live session örökítette meg, amely EP-ként, valamint három különálló videóként is elérhető.",
+    "ha_day_img": "img/day.jpg",
+    "ha_day_youtube": "https://youtu.be",
+    "ha_night_img": "img/night.jpg",
+    "ha_night_youtube": "https://youtu.be",
+    "ha_desc_en": "The trio’s next recording session took place in a special outdoor location. It yielded two beautiful videos of new original music, one representing day and the other standing for night.",
+    "ha_desc_hu": "A trió következő felvétele egy különleges szabadtéri helyszínen készült. Két gyönyörű videó született belőle új, saját szerzeményekkel: az egyik a nappalt, a másik az éjszakát idézi meg."
+  },
+  "live": {
+    "intro_en": "2026 has been filled with many nice concerts at different types of venues in Hungary. Some of these performances have been documented and made available online.",
+    "intro_hu": "2026 számos szép koncertet hozott különféle hazai helyszíneken. Ezek közül több fellépés felvétele online is elérhető.",
+    "videos": [
+      {
+        "title_en": "Debut Concert",
+        "title_hu": "Debütáló koncert",
+        "venue": "Opus Jazz Club",
+        "img": "img/opus.jpg",
+        "youtube": "https://youtu.be"
+      },
+      {
+        "title_en": "Live TV Recording",
+        "title_hu": "Élő TV-felvétel",
+        "venue": "A38",
+        "img": "img/a38.jpg",
+        "youtube": "https://youtu.be"
+      }
+    ]
+  },
+  "plans": {
+    "stops": [
+      { "when_en": "First recording", "when_hu": "Első felvétel", "what_en": "Downpour EP", "what_hu": "Downpour EP", "upcoming": false },
+      { "when_en": "Second recording", "when_hu": "Második felvétel", "what_en": "The Home Anywhere Session", "what_hu": "The Home Anywhere Session", "upcoming": false },
+      { "when_en": "2026", "when_hu": "2026", "what_en": "Concerts across Hungary", "what_hu": "Koncertek itthon", "upcoming": false },
+      { "when_en": "2026–2027", "when_hu": "2026–2027", "what_en": "Festivals and clubs in and around Europe", "what_hu": "Fesztiválok és klubok Európa-szerte", "upcoming": true },
+      { "when_en": "2027", "when_hu": "2027", "what_en": "Full-length album", "what_hu": "Nagylemez", "upcoming": true }
+    ],
+    "summary_en": "Their plans for the rest of 2026 and next year – apart from continuing to work in Hungary – are to go on the road and start playing festivals and club concerts in and around Europe.",
+    "summary_hu": "2026 hátralévő részére és a jövő évre vonatkozó terveik között – a hazai munka folytatása mellett – az szerepel, hogy útnak induljanak, és Európa-szerte fesztiválokon és klubokban koncertezzenek."
+  },
+  "contact": {
+    "person_en": "Péter Cseh",
+    "person_hu": "Cseh Péter",
+    "phone": "+36 30 178 3250",
+    "email": "hidaktrio@gmail.com",
+    "instagram": "hidaktrio",
+    "bandcamp": "://bandcamp.com"
+  }
+}
