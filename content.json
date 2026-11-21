@@ -34,7 +34,7 @@
       "name_en": "Tamás Hidász",
       "name_hu": "Hidász Tamás",
       "ins_en": "Drums",
-      "ins_hu": "Dob",
+      "ins_hu": "Ukulele",
       "bio_en": "First place winner in numerous domestic and international jazz competitions with Tamás Balogh’s band; recipient of the Dezső Lakatos-Ablakos Scholarship.",
       "bio_hu": "Balogh Tamás zenekarával számos hazai és nemzetközi jazzverseny első helyezettje, Lakatos „Ablakos” Dezső-ösztöndíjas. Együttműködései közül: László Attila Quartet, Binder Trio / Quartet."
     }
@@ -75,11 +75,41 @@
   },
   "plans": {
     "stops": [
-      { "when_en": "First recording", "when_hu": "Első felvétel", "what_en": "Downpour EP", "what_hu": "Downpour EP", "upcoming": false },
-      { "when_en": "Second recording", "when_hu": "Második felvétel", "what_en": "The Home Anywhere Session", "what_hu": "The Home Anywhere Session", "upcoming": false },
-      { "when_en": "2026", "when_hu": "2026", "what_en": "Concerts across Hungary", "what_hu": "Koncertek itthon", "upcoming": false },
-      { "when_en": "2026–2027", "when_hu": "2026–2027", "what_en": "Festivals and clubs in and around Europe", "what_hu": "Fesztiválok és klubok Európa-szerte", "upcoming": true },
-      { "when_en": "2027", "when_hu": "2027", "what_en": "Full-length album", "what_hu": "Nagylemez", "upcoming": true }
+      {
+        "when_en": "First recording",
+        "when_hu": "Első felvétel",
+        "what_en": "Downpour EP",
+        "what_hu": "Downpour EP",
+        "upcoming": false
+      },
+      {
+        "when_en": "Second recording",
+        "when_hu": "Második felvétel",
+        "what_en": "The Home Anywhere Session",
+        "what_hu": "The Home Anywhere Session",
+        "upcoming": false
+      },
+      {
+        "when_en": "2026",
+        "when_hu": "2026",
+        "what_en": "Concerts across Hungary",
+        "what_hu": "Koncertek itthon",
+        "upcoming": false
+      },
+      {
+        "when_en": "2026–2027",
+        "when_hu": "2026–2027",
+        "what_en": "Festivals and clubs in and around Europe",
+        "what_hu": "Fesztiválok és klubok Európa-szerte",
+        "upcoming": true
+      },
+      {
+        "when_en": "2027",
+        "when_hu": "2027",
+        "what_en": "Full-length album",
+        "what_hu": "Nagylemez",
+        "upcoming": true
+      }
     ],
     "summary_en": "Their plans for the rest of 2026 and next year – apart from continuing to work in Hungary – are to go on the road and start playing festivals and club concerts in and around Europe.",
     "summary_hu": "2026 hátralévő részére és a jövő évre vonatkozó terveik között – a hazai munka folytatása mellett – az szerepel, hogy útnak induljanak, és Európa-szerte fesztiválokon és klubokban koncertezzenek."
