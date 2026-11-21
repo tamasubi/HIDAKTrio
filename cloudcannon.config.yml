@@ -1,11 +1,106 @@
+source: /
 paths:
+  uploads: img
   static: ''
-  uploads: uploads
-timezone: Europe/Budapest
-markdown:
-  engine: commonmark
-  options: {}
+
 collections_config:
   pages:
     path: ''
-    icon: wysiwyg
+    glob:
+      - '*.html'
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+    _hide: true
+
+  data:
+    path: ''
+    glob:
+      - content.json
+    name: Weboldal tartalma (EPK)
+    icon: edit_note
+    disable_add: true
+    disable_add_folder: true
+
+_inputs:
+  cover_img:
+    type: image
+    label: Borítókép
+  img:
+    type: image
+    label: Fotó
+  ep_thumb:
+    type: image
+    label: Downpour videó kép
+  ep_cover:
+    type: image
+    label: Downpour borítókép
+  ha_day_img:
+    type: image
+    label: Home Anywhere (Nappal) kép
+  ha_night_img:
+    type: image
+    label: Home Anywhere (Éjszaka) kép
+  title_hu:
+    type: text
+    label: Cím (Magyar)
+  title_en:
+    type: text
+    label: Cím (Angol)
+  name_hu:
+    type: text
+    label: Név (Magyar)
+  name_en:
+    type: text
+    label: Név (Angol)
+  ins_hu:
+    type: text
+    label: Hangszer (Magyar)
+  ins_en:
+    type: text
+    label: Hangszer (Angol)
+  lead_hu:
+    type: textarea
+    label: Bevezető szöveg (Magyar)
+  lead_en:
+    type: textarea
+    label: Bevezető szöveg (Angol)
+  dict_hu:
+    type: textarea
+    label: Szótár leírás (Magyar)
+  dict_en:
+    type: textarea
+    label: Szótár leírás (Angol)
+  bio_hu:
+    type: textarea
+    label: Bemutatkozás (Magyar)
+  bio_en:
+    type: textarea
+    label: Bemutatkozás (Angol)
+  ep_desc_hu:
+    type: textarea
+    label: Downpour leírás (Magyar)
+  ep_desc_en:
+    type: textarea
+    label: Downpour leírás (Angol)
+  ha_desc_hu:
+    type: textarea
+    label: Home Anywhere leírás (Magyar)
+  ha_desc_en:
+    type: textarea
+    label: Home Anywhere leírás (Angol)
+  intro_hu:
+    type: textarea
+    label: Koncertek bevezető (Magyar)
+  intro_en:
+    type: textarea
+    label: Koncertek bevezető (Angol)
+  summary_hu:
+    type: textarea
+    label: Tervek összegző szöveg (Magyar)
+  summary_en:
+    type: textarea
+    label: Tervek összegző szöveg (Angol)
+  upcoming:
+    type: switch
+    label: Jövőbeli állomás? (teli pötty)
